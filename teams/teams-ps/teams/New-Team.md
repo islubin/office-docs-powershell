@@ -40,7 +40,7 @@ New-Team -GroupId <String> [-Owner <String>] [-AllowGiphy <Boolean>] [-GiphyCont
 ```
 
 ## DESCRIPTION
-Creates a new team with user specified settings, and returns a Group object with a GroupID property.
+Creates a new team with user specified settings, and returns a Group object with a GroupID property.  Note that Templates are not yet supported in our 1.0 PowerShell release.
 
 ## EXAMPLES
 
@@ -51,20 +51,19 @@ New-Team -DisplayName "Tech Reads"
 
 ### Example 2
 ```
-New-Team -DisplayName "Tech Reads" -Description "Team to post technical articles and blogs" -AccessType Public
+New-Team -DisplayName "Tech Reads" -Description "Team to post technical articles and blogs" -Visibility Public
 ```
 
 ### Example 3
 ```
 Connect-MicrosoftTeams -AccountId myaccount@example.com
-$group = New-Team -alias "TestTeam" -displayname "Test Teams" -AccessType "private"
+$group = New-Team -alias "TestTeam" -displayname "Test Teams" -Visibility "private"
 Add-TeamUser -GroupId $group.GroupId -User "fred@example.com"
 Add-TeamUser -GroupId $group.GroupId -User "john@example.com"
 Add-TeamUser -GroupId $group.GroupId -User "wilma@example.com"
 New-TeamChannel -GroupId $group.GroupId -DisplayName "Q4 planning"
 New-TeamChannel -GroupId $group.GroupId -DisplayName "Exec status"
 New-TeamChannel -GroupId $group.GroupId -DisplayName "Contracts"
-Set-TeamFunSettings -GroupId $group.GroupId -AllowCustomMemes true
 ```
 
 ## PARAMETERS
@@ -136,6 +135,8 @@ Accept wildcard characters: False
 ```
 
 ### -Template
+Note: this parameter is not supported in our 1.0 PowerShell release, only in Preview.
+
 If you have an EDU license, you can use this parameter to specify which template you'd like to use for creating your group.
 Do not use this parameter when converting an existing group.
 

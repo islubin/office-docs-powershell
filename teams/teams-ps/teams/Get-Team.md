@@ -16,13 +16,13 @@ This cmdlet supports retrieving teams with particular properties/information, in
 ### Identity
 ```
 Get-Team -GroupId <String> [-User <String>] [-Archived <Boolean>] [-Visibility <String>]
- [-DisplayName <String>] [-MailNickName <String>] [<CommonParameters>]
+ [-DisplayName <String>] [-Alias <String>] [<CommonParameters>]
 ```
 
 ### Filters
 ```
 Get-Team [-User <String>] [-Archived <Boolean>] [-Visibility <String>] [-DisplayName <String>]
- [-MailNickName <String>] [<CommonParameters>]
+ [-Alias <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -36,6 +36,14 @@ Note: depending on the number of teams and O365 Groups in your organization and 
 ```
 PS> Get-Team -User dmx1@example.com
 ```
+
+Returns all teams that a user (dmx1@example.com) belongs to
+
+### Example 2
+```
+PS> Get-Team -Archived $true -Visibility Private
+```
+Returns all teams that are private and have been archived.
 
 ## PARAMETERS
 
@@ -136,8 +144,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -MailNickName
-Specify the mail nick name (also known as alias) of the team that is being returned.  This is a unique identifier and returns exact match.
+### -Alias
+Specify the alias (also known as mailnickname) of the team that is being returned.  This is a unique identifier and returns exact match.
 
 ```yaml
 Type: String
