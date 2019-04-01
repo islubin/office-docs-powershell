@@ -13,7 +13,7 @@ This cmdlet allows you to update properties of a team, including its displayname
 ## SYNTAX
 
 ```
-Set-Team -GroupId <String> [-DisplayName <String>] [-Description <String>] [-Alias <String>]
+Set-Team -GroupId <String> [-DisplayName <String>] [-Description <String>] [-MailNickName <String>]
  [-Classification <String>] [-Visibility <String>] [-AllowGiphy <Boolean>] [-GiphyContentRating <String>]
  [-AllowStickersAndMemes <Boolean>] [-AllowCustomMemes <Boolean>] [-AllowGuestCreateUpdateChannels <Boolean>]
  [-AllowGuestDeleteChannels <Boolean>] [-AllowCreateUpdateChannels <Boolean>] [-AllowDeleteChannels <Boolean>]
@@ -83,9 +83,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Alias
-Same as displayName without any spaces.
-Team Alias Characters Limit - 64
+### -MailNickName
+The MailNickName parameter specifies the alias for the associated Office 365 Group.
+This value will be used for the mail enabled object and will be used as PrimarySmtpAddress for this Office 365 Group.
+The value of the MailNickName parameter has to be unique across your tenant.
 
 ```yaml
 Type: String

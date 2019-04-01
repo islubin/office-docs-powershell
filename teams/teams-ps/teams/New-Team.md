@@ -18,7 +18,7 @@ Note: The Teams application may need to be open by an Owner for up to two hours 
 
 ### CreateTeam (Default)
 ```
-New-Team -DisplayName <String> [-Description <String>] [-Alias <String>] [-Classification <String>]
+New-Team -DisplayName <String> [-Description <String>] [-MailNickName <String>] [-Classification <String>]
  [-Visibility <String>] [-Template <String>] [-Owner <String>] [-AllowGiphy <Boolean>]
  [-GiphyContentRating <String>] [-AllowStickersAndMemes <Boolean>] [-AllowCustomMemes <Boolean>]
  [-AllowGuestCreateUpdateChannels <Boolean>] [-AllowGuestDeleteChannels <Boolean>]
@@ -68,10 +68,10 @@ New-TeamChannel -GroupId $group.GroupId -DisplayName "Contracts"
 
 ## PARAMETERS
 
-### -Alias
-The Alias parameter specifies the alias for the associated Office 365 Group.
+### -MailNickName
+The MailNickName parameter specifies the alias for the associated Office 365 Group.
 This value will be used for the mail enabled object and will be used as PrimarySmtpAddress for this Office 365 Group.
-The value of the Alias parameter has to be unique across your tenant.
+The value of the MailNickName parameter has to be unique across your tenant.
 
 For more details about the naming conventions see here: New-UnifiedGroup, Parameter: -Alias (https://docs.microsoft.com/en-us/powershell/module/exchange/users-and-groups/new-unifiedgroup?view=exchange-ps#optional-parameters).
 
