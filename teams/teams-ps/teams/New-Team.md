@@ -261,8 +261,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
 ### -AllowDeleteChannels
 Setting that determines whether or not members (and not only owners) can delete channels in the team.
+=======
+### -Group
+Use this parameter to specify the ExternalDirectoryObjectId of a group you would like to convert to a team.
+If you are using this parameter, do not specify other parameters.
+>>>>>>> ed3897c8e76fbea19b7802f09f128b6a16cf33cb
 
 ```yaml
 Type: Boolean
